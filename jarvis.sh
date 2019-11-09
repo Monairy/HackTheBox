@@ -32,7 +32,7 @@ def exec_ping():
 
 >>find / -perm -u=s -type f 2>/dev/null 
 
-##we see that systemctl runs as root but pepper owns it
+##we see that the SUID bit of systemctl is flipped, so pepper can run is at root
 ##systemctl: manage systemmd services, Systemd is an init system and system manage,
 The fundamental purpose of an init system is to initialize the components that must be started after the Linux kernel is booted##
 
