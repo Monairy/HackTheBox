@@ -1,7 +1,7 @@
-## nmap -sVC -A 10.10.165.189
+## nmap -sVC -A 10.10.46.153
 ```bash
 Starting Nmap 7.80 ( https://nmap.org ) at 2022-03-20 22:34 EET
-Nmap scan report for 10.10.165.189
+Nmap scan report for 10.10.46.153
 Host is up (0.37s latency).
 Not shown: 988 closed ports
 PORT      STATE    SERVICE            VERSION
@@ -120,13 +120,13 @@ TRACEROUTE (using port 5900/tcp)
 HOP RTT       ADDRESS
 1   256.72 ms 10.2.0.1
 2   ... 3
-4   367.58 ms 10.10.165.189
+4   367.58 ms 10.10.46.153
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 296.26 seconds
 ```
 ## SMB Enumeration
-### smbclient -L //10.10.165.189  -N  
+### smbclient -L //10.10.46.153  -N  
 ```bash
 	Sharename       Type      Comment
 	---------       ----      -------
@@ -135,9 +135,9 @@ Nmap done: 1 IP address (1 host up) scanned in 296.26 seconds
 	IPC$            IPC       Remote IPC
 	Users           Disk      
 Reconnecting with SMB1 for workgroup listing.
-do_connect: Connection to 10.10.165.189 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+do_connect: Connection to 10.10.46.153 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
 Failed to connect with SMB1 -- no workgroup available
-### smbclient //10.10.165.189/Users -N
+### smbclient //10.10.46.153/Users -N
 ```bash
 smb: \> dir
   .                                  DR        0  Fri May 15 03:57:08 2020
