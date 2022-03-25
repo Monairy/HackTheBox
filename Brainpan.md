@@ -1,6 +1,6 @@
-## nmap -sVC -A 10.10.148.225
+## nmap -sVC -A 10.10.93.138
 ```bash
-Nmap scan report for 10.10.148.225
+Nmap scan report for 10.10.93.138
 Host is up (0.39s latency).
 Not shown: 997 closed tcp ports (reset)
 PORT      STATE    SERVICE VERSION
@@ -67,7 +67,7 @@ TRACEROUTE (using port 1720/tcp)
 HOP RTT       ADDRESS
 1   225.67 ms 10.2.0.1
 2   ... 3
-4   367.89 ms 10.10.148.225
+4   367.89 ms 10.10.93.138
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 165.90 seconds
